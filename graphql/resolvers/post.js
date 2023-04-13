@@ -15,4 +15,21 @@ module.exports = {
       });
     },
   },
+  Query: {
+    async getAllPosts() {
+      return Post.findAll();
+    },
+    async getSinglePost(_, { postId }) {
+      return Post.findByPk(postId);
+    },
+  },
+
+  Post: {
+    async author(post) {
+      return post.getAuthor();
+    },
+    async comments(post) {
+      return post.getComments();
+    },
+  },
 };
