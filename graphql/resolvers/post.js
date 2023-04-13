@@ -32,4 +32,9 @@ module.exports = {
       return post.getComments();
     },
   },
+  Comment: {
+    async author(comment) {
+      return comment.getAuthor();
+    },
+  },
 };
